@@ -63,10 +63,10 @@ pages
 styles
     images
     index.css (pagina de bienvenida)
-    signIn.hmtl (Inicio de Sesio)
-    register.hmtl (registro)
+    signIn.css (Inicio de Sesio)
+    register.css (registro)
     landingPage.css (pagina general)
-    cart.hmtl (pagina para ver el carrito)
+    cart.css (pagina para ver el carrito)
     products.css (pagina para ver los productos)
     productDeatil.css (pagina para ver el detalle del producto)
     profile.css (pagina para ver el perfil de usuario)
