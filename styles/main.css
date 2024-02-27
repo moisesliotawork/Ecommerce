@@ -112,13 +112,9 @@ footer {
   border: 12rem;
 }
 
-footer a {
-  color: #f0f0f0;
-}
-
 /* Ajustes adicionales para mejorar la accesibilidad y el diseño */
 
-hgroup p,
+.main p,
 a,
 h1,
 h3 {
@@ -151,4 +147,19 @@ a[role="button"] {
 
 a[role="button"]:hover {
   background-color: #610000;
+}
+
+.content h3 {
+  color: #333;
+}
+
+.content {
+  padding-left: 1rem;
+  padding-top: 0rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.content .text {
+  padding-top: 20px;
 }
