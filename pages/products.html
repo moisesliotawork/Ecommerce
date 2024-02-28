@@ -2,8 +2,152 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles/products.css" />
+    <title>E-commerce Product Page</title>
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Carrito</a></li>
+        <li><a href="#">Quienes Somos</a></li>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </nav>
+    <div class="products-container">
+      <!-- Repetir este bloque para cada producto -->
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="../image/6074571.jpg"
+          alt="Product Name"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-title">Nombre del Producto</h3>
+          <p class="product-price">$Precio</p>
+          <button class="btn-add-to-cart">Añadir al Carrito</button>
+        </div>
+      </div>
+    </div>
+    <!-- Ventana emergente / Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="Product Image" />
+        <h3 id="modalTitle">Nombre del Producto</h3>
+        <p id="modalPrice">$Precio</p>
+        <p id="modalDescription">Descripción del Producto</p>
+        <!-- Añadir más detalles según sea necesario -->
+      </div>
+    </div>
+    <script src="../js/products.js"></script>
+  </body>
 </html>
