@@ -14,7 +14,14 @@ function loadUsersFromLocalStorage() {
 
 document.addEventListener("DOMContentLoaded", loadUsersFromLocalStorage);
 
-function mostrarPopup() {
+function mostrarPopup(mensaje) {
+  // Selecciona el párrafo donde quieres insertar el mensaje dinámico
+  const popupMessage = document.getElementById("popupMessage");
+
+  // Actualiza el contenido del párrafo con el mensaje recibido
+  popupMessage.textContent = mensaje;
+
+  // Muestra el pop-up modificando el estilo 'display'
   document.getElementById("popupError").style.display = "flex";
 }
 
@@ -33,17 +40,33 @@ document
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
-    if (validarCredenciales(email, password, users)) {
-      window.location.href = "../pages/products.html";
+    if (validarCorreo(email, users)) {
+      if (validarCredenciales(email, password, users)) {
+        window.location.href = "../pages/products.html";
+      } else {
+        const msgPassword = "Contraseña inválida";
+        //console.log("Credenciales inválidas");
+        mostrarPopup(msgPassword);
+      }
     } else {
-      console.log("Credenciales inválidas");
-      mostrarPopup();
+      const msgEmail = "El email no se encuentra registrado";
+      //console.log("Credenciales inválidas");
+      mostrarPopup(msgEmail);
     }
   });
 
 function validarCredenciales(email, password, users) {
   for (let i = 0; i < users.length; i++) {
     if (users[i].email === email && users[i].password === password) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function validarCorreo(email, users) {
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email === email) {
       return true;
     }
   }
