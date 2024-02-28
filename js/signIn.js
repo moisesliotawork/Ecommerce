@@ -1,61 +1,37 @@
-const userUno = {
-  email: "adalith@gmail.com",
-  password: "1234",
-};
+function loadUsersFromLocalStorage() {
+  // Obtén la cadena almacenada en localStorage para la clave 'users'
+  const usersStr = localStorage.getItem("users");
 
-const userDos = {
-  email: "ares@gmail.com",
-  password: "1234",
-};
-const userTres = {
-  email: "josefilardi@gmail.com",
-  password: "1234",
-};
-const userCuatro = {
-  email: "josue@gmail.com",
-  password: "1234",
-};
-const userCinco = {
-  email: "robertDoc@gmail.com",
-  password: "1234",
-};
+  // Verifica si 'usersStr' existe para evitar errores en JSON.parse
+  if (usersStr) {
+    // Convierte la cadena JSON a un objeto JavaScript
+    const users = JSON.parse(usersStr);
+    return users;
+  } else {
+    return null;
+  }
+}
 
-const userSeis = {
-  email: "naysojeda@gmail.com",
-  password: "1234",
-};
-
-const userSiete = {
-  email: "moisesliota@gmail.com",
-  password: "1234",
-};
-
-const users = [
-  userUno,
-  userDos,
-  userTres,
-  userCuatro,
-  userCinco,
-  userSeis,
-  userSiete,
-];
+document.addEventListener("DOMContentLoaded", loadUsersFromLocalStorage);
 
 document
   .getElementById("formulario")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const users = loadUsersFromLocalStorage();
+
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
-    if (validarCredenciales(email, password)) {
-      window.location.href = "../pages/index.html";
+    if (validarCredenciales(email, password, users)) {
+      window.location.href = "../pages/products.html";
     } else {
       console.log("Credenciales inválidas");
     }
   });
 
-function validarCredenciales(email, password) {
+function validarCredenciales(email, password, users) {
   for (let i = 0; i < users.length; i++) {
     if (users[i].email === email && users[i].password === password) {
       return true;
