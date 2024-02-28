@@ -14,6 +14,15 @@ function loadUsersFromLocalStorage() {
 
 document.addEventListener("DOMContentLoaded", loadUsersFromLocalStorage);
 
+function mostrarPopup() {
+  document.getElementById("popupError").style.display = "flex";
+}
+
+// Función para cerrar el pop-up
+function cerrarPopup() {
+  document.getElementById("popupError").style.display = "none";
+}
+
 document
   .getElementById("formulario")
   .addEventListener("submit", function (event) {
@@ -28,6 +37,7 @@ document
       window.location.href = "../pages/products.html";
     } else {
       console.log("Credenciales inválidas");
+      mostrarPopup();
     }
   });
 
