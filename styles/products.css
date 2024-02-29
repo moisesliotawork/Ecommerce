@@ -106,7 +106,8 @@ html {
   margin: 10% auto; /* 15% desde arriba y centrado */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Podrías querer un ancho menor o mayor */
+  width: 30%; /* Podrías querer un ancho menor o mayor */
+  border-radius: 4px;
 }
 
 /* El botón para cerrar la ventana */
@@ -122,4 +123,47 @@ html {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Estilo para la imagen dentro del modal */
+#modalImage {
+  max-width: 30%; /* Limita el ancho máximo de la imagen para evitar que ocupe toda la pantalla */
+  max-height: 200px; /* Puedes ajustar esto según tus necesidades */
+  display: block; /* Asegura que la imagen tenga su propia línea */
+  margin: 20px auto; /* Centra la imagen horizontalmente y añade un poco de margen vertical */
+}
+
+.quantity-controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.quantity-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.quantity-input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+/* Deshabilitar la apariencia de botón para los input de tipo número */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

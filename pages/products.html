@@ -37,7 +37,15 @@
         <div class="product-details">
           <h3 class="product-title">Audifono U Products USB</h3>
           <p class="product-price">Precio: $20</p>
-          <button class="btn-add-to-cart">Añadir al Carrito</button>
+          <button
+            class="btn-add-to-cart"
+            data-title="Audifono U Products USB"
+            data-price="$20"
+            data-description="Descripción del Audifono U Products USB"
+            data-image="../image/Audifono USB U store.png"
+          >
+            Añadir al Carrito
+          </button>
         </div>
       </div>
       <div class="product-card">
@@ -142,10 +150,15 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <img id="modalImage" src="" alt="Product Image" />
-        <h3 id="modalTitle">Nombre del Producto</h3>
-        <p id="modalPrice">$Precio</p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalPrice"></p>
         <p id="modalDescription">Descripción del Producto</p>
-        <!-- Añadir más detalles según sea necesario -->
+        <div class="quantity-controller">
+          <button class="quantity-btn minus" disabled>-</button>
+          <input type="number" class="quantity-input" value="1" min="1" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button>Confirmar</button>
       </div>
     </div>
     <script src="../js/products.js"></script>

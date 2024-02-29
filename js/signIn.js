@@ -42,6 +42,7 @@ document
 
     if (validarCorreo(email, users)) {
       if (validarCredenciales(email, password, users)) {
+        saveUsersToLocalStorage(searchUser(email, users));
         window.location.href = "../pages/products.html";
       } else {
         const msgPassword = "Contraseña inválida";
@@ -71,4 +72,20 @@ function validarCorreo(email, users) {
     }
   }
   return false;
+}
+
+function saveUsersToLocalStorage(currentUser) {
+  // Convierte el arreglo de usuarios a una cadena JSON
+  const usersStr = JSON.stringify(currentUser);
+  // Guarda la cadena en localStorage con la clave 'users'
+  localStorage.setItem("currentUser", usersStr);
+}
+
+function searchUser(email, users) {
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email === email) {
+      return users[i];
+    }
+  }
+  return null;
 }
