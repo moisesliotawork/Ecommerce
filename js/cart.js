@@ -1,15 +1,5 @@
-const productUno = {
-  name: "xexcc",
-  image: "../image/88i99.jpg",
-  price: "$15",
-  description: "vybunim,lmghbjnkml,miubyvbjnk",
-};
-const cart = { totalAmount: 0, quantity: 0, products: [] };
-
-// Simulando la adición de productoUno al carrito
-cart.products.push(productUno);
-cart.quantity += 1;
-cart.totalAmount += parseFloat(productUno.price.substring(1)); // Quita el signo de dólar y convierte a número
+const cartStr = localStorage.getItem("cart");
+const cart = JSON.parse(cartStr);
 
 function updateCartView() {
   const productsList = document.getElementById("productsList");

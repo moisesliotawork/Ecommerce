@@ -167,3 +167,68 @@ html {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Estilos para móviles primero (Mobile First) */
+.navbar ul {
+  flex-direction: column;
+  padding: 0;
+}
+
+.navbar ul li {
+  padding: 10px; /* Más espacio en cada elemento para facilitar el toque en pantallas táctiles */
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+  }
+  .navbar ul li {
+    padding: 0 20px;
+  }
+}
+
+/* Ajustes para el contenedor de productos */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Ajustes para las tarjetas de productos */
+.product-card {
+  width: 100%; /* Ocupa el 100% del ancho en dispositivos móviles */
+  margin: 10px;
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 600px) {
+  .product-card {
+    width: calc(
+      50% - 20px
+    ); /* Ajuste para 2 columnas con espacio de separación */
+  }
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 1024px) {
+  .product-card {
+    width: calc(
+      25% - 20px
+    ); /* Ajuste para 4 columnas con espacio de separación */
+  }
+}
+
+/* Estilos para la ventana modal en dispositivos móviles */
+.modal-content {
+  width: 90%; /* Ancho más pequeño en dispositivos móviles */
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 30%; /* Ancho más grande en pantallas de escritorio */
+  }
+}
