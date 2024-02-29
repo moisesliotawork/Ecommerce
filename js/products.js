@@ -1,4 +1,17 @@
-const cart = { totalAmount: 0, quantity: 0, products: [] };
+const cart = {
+  totalAmount: 0,
+  quantity: 0,
+  products: [
+    {
+      name: "dfghjk",
+      image: "../image/Corneta U store.png",
+      price: "$12",
+      description: "fghjkjhg",
+    },
+  ],
+};
+
+document.addEventListener("DOMContentLoaded", saveCartToLocalStorage(cart));
 
 document.addEventListener("DOMContentLoaded", function () {
   const addToCartButtons = document.querySelectorAll(".btn-add-to-cart");
@@ -68,3 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function saveCartToLocalStorage(cart) {
+  const cartStr = JSON.stringify(cart);
+  localStorage.setItem("cart", cartStr);
+}
