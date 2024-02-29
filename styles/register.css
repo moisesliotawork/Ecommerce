@@ -165,3 +165,23 @@ input[type="text"]:focus {
 .popup-content button:hover {
   background-color: #0099a9; /* Oscurece el botón al pasar el ratón por encima */
 }
+
+/* Estilos base (móviles) */
+.registration-box {
+  width: 90%; /* Hace que la caja de registro sea más ancha en dispositivos pequeños */
+  margin: 20px auto; /* Centra la caja en la pantalla */
+}
+
+/* Tablets y dispositivos con pantalla de hasta 768px de ancho */
+@media (min-width: 481px) and (max-width: 768px) {
+  .registration-box {
+    width: 70%; /* Ajusta el ancho para tablets */
+  }
+}
+
+/* Desktops y dispositivos con pantalla mayor a 768px de ancho */
+@media (min-width: 769px) {
+  .registration-box {
+    width: 400px; /* Mantiene un ancho fijo para pantallas grandes */
+  }
+}

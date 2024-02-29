@@ -171,3 +171,30 @@ input[type="text"]:focus {
 .popup-content button:hover {
   background-color: #0099a9; /* Oscurece el botón al pasar el ratón por encima */
 }
+
+/* Pantallas pequeñas (menos de 600px) */
+@media only screen and (max-width: 600px) {
+  .registration-box {
+    width: 90%; /* Hace la caja más ancha para usar más espacio disponible */
+    margin: 20px; /* Aumenta el margen */
+    padding: 15px; /* Ajusta el padding */
+  }
+
+  .background {
+    padding: 15px; /* Reduce el padding general para pantallas pequeñas */
+  }
+}
+
+/* Pantallas medianas (menos de 768px) */
+@media only screen and (max-width: 768px) {
+  .registration-box {
+    width: 85%; /* Ajusta el ancho para tablets */
+  }
+}
+
+/* Pantallas grandes y más (mayores a 768px) */
+@media only screen and (min-width: 768px) {
+  .registration-box {
+    width: 400px; /* Mantiene un ancho fijo para pantallas grandes */
+  }
+}

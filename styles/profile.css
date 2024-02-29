@@ -52,3 +52,61 @@ html {
   color: #000;
   margin-bottom: 8px;
 }
+
+/* Pantallas pequeñas (teléfonos móviles) */
+@media only screen and (max-width: 600px) {
+  .profile-header {
+    flex-direction: column; /* Cambia la disposición de los elementos a columna */
+    gap: 10px; /* Añade un espacio entre los elementos */
+  }
+
+  .profile-container {
+    top: 20px; /* Reduce el espacio desde la parte superior */
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .profile-container {
+    width: 80%; /* Permite que el contenedor ocupe más espacio */
+    top: 30px; /* Ajuste moderado del espacio superior */
+  }
+}
+
+.profile-container {
+  max-width: 400px; /* Limita el ancho máximo pero permite que sea más pequeño */
+  width: 90%; /* Hace que el contenedor sea más flexible */
+  margin: 20px auto; /* Centra el contenedor y añade un margen superior */
+  position: relative;
+  top: 50px; /* Ajusta el espaciado desde la parte superior */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.logout-button,
+.back-arrow {
+  padding: 8px 15px; /* Ajusta el padding para que sea más adecuado en dispositivos pequeños */
+}
+
+.profile-container {
+  /* Resto de tus estilos */
+  display: flex;
+  flex-direction: column; /* Nuevo: Organiza los hijos en una columna */
+  justify-content: space-between; /* Nuevo: Distribuye el espacio */
+  height: 300px; /* Nuevo: Altura fija para el contenedor */
+}
+
+.profile-header {
+  /* Resto de tus estilos */
+  justify-content: flex-start; /* Nuevo: Alinea al inicio (izquierda) */
+}
+
+.profile-footer {
+  display: flex;
+  justify-content: flex-end; /* Alinea el botón al final (derecha) */
+  padding: 10px; /* Espacio alrededor del botón */
+}
+
+.logout-button {
+  /* Resto de tus estilos */
+  margin-top: auto; /* Nuevo: Empuja el botón hacia abajo */
+}
