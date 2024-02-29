@@ -39,27 +39,30 @@ document
 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    console.log(email + " " + password + " " + confirmPassword);
     if (validarCorreo(email, users)) {
-      if (validarCredenciales(email, password, users)) {
-        window.location.href = "../pages/products.html";
+      if (validarPassword(confirmPassword, password)) {
+        const user = searchUser(email, users);
+        user.password = password;
+
+        setUser(user, users);
+        saveUsersToLocalStorage(users);
+
+        window.location.href = "../pages/signIn.html";
       } else {
-        const msgPassword = "Contraseña inválida";
-        //console.log("Credenciales inválidas");
+        const msgPassword = "Las contraseñas deben coincidir";
         mostrarPopup(msgPassword);
       }
     } else {
       const msgEmail = "El email no se encuentra registrado";
-      //console.log("Credenciales inválidas");
       mostrarPopup(msgEmail);
     }
   });
 
-function validarCredenciales(email, password, users) {
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].email === email && users[i].password === password) {
-      return true;
-    }
+function validarPassword(confirmPasssword, password) {
+  if (confirmPasssword === password) {
+    return true;
   }
   return false;
 }
@@ -71,4 +74,28 @@ function validarCorreo(email, users) {
     }
   }
   return false;
+}
+
+function searchUser(email, users) {
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email === email) {
+      return users[i];
+    }
+  }
+  return null;
+}
+
+function setUser(user, users) {
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email === user.email) {
+      users[i] = user;
+    }
+  }
+}
+
+function saveUsersToLocalStorage(users) {
+  // Convierte el arreglo de usuarios a una cadena JSON
+  const usersStr = JSON.stringify(users);
+  // Guarda la cadena en localStorage con la clave 'users'
+  localStorage.setItem("users", usersStr);
 }

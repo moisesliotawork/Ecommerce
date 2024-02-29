@@ -48,7 +48,7 @@ a {
 
 .registration-box form {
   display: grid;
-  gap: 16px; /* Aumenta la separación entre elementos del formulario */
+  gap: 12px; /* Aumenta la separación entre elementos del formulario */
 }
 
 input[type="email"],
@@ -82,6 +82,11 @@ input[type="text"],
 .registration-box p {
   text-align: center; /* Centra el texto en la caja */
   margin-top: 24px; /* Espacio antes del párrafo */
+}
+
+#pass {
+  text-align: left; /* Centra el texto en la caja */
+  margin: 0px; /* Espacio antes del párrafo */
 }
 
 /* Hace que solo 'Login here' sea clickeable como un link */
