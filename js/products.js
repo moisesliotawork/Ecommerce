@@ -1,3 +1,5 @@
+const cart = { totalAmount: 0, quantity: 0, products: [] };
+
 document.addEventListener("DOMContentLoaded", function () {
   const addToCartButtons = document.querySelectorAll(".btn-add-to-cart");
   const modal = document.getElementById("productModal");
