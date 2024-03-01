@@ -108,6 +108,7 @@ html {
   border: 1px solid #888;
   width: 30%; /* Podrías querer un ancho menor o mayor */
   border-radius: 4px;
+  gap: 15px;
 }
 
 /* El botón para cerrar la ventana */

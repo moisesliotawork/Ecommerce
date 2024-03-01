@@ -36,3 +36,27 @@ html {
   background-color: #f9f9f9;
   border-radius: 8px;
 }
+
+.cart-summary {
+  position: relative; /* Añadido para el posicionamiento del botón */
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.checkout-button {
+  position: absolute; /* Posicionar el botón dentro de .cart-summary */
+  right: 10px; /* Alineado a la derecha */
+  bottom: 10px; /* A la misma altura que el total a pagar */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
