@@ -92,7 +92,7 @@ function addCart() {
     name: name.textContent,
     description: description.textContent,
     image: image.src,
-    price: price.textContent,
+    price: price,
     quantity: obtenerValorCantidad(),
   };
 

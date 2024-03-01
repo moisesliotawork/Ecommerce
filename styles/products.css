@@ -233,3 +233,113 @@ html {
     width: 30%; /* Ancho más grande en pantallas de escritorio */
   }
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: none;
+  width: 80%; /* Ancho más apropiado para todos los dispositivos */
+  max-width: 400px; /* Máximo ancho que la ventana modal puede tener */
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para un toque de profundidad */
+  text-align: center; /* Centra el texto para una presentación más limpia */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalImage {
+  width: 100%; /* Imagen debe ocupar el ancho completo para consistencia */
+  height: auto;
+  margin-bottom: 20px; /* Espacio antes del título */
+}
+
+/* Estilo simplificado para el título y la descripción */
+#modalTitle,
+#modalDescription {
+  margin-bottom: 20px; /* Espacio uniforme después de cada elemento */
+}
+
+.quantity-controller {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px 0; /* Espacio antes y después del controlador de cantidad */
+  justify-content: center;
+}
+
+.quantity-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #333;
+  margin: 0; /* Remover márgenes adicionales */
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc; /* Añadir borde para definir el campo de entrada */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 5px;
+  margin: 0 10px;
+}
+
+/* Botón de confirmación estilizado para que coincida con el estilo minimalista */
+button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto; /* Auto para el ancho para que no ocupe todo el ancho */
+  display: inline-block; /* Para que el botón no ocupe todo el ancho de la línea */
+  margin-top: 20px; /* Espacio antes del botón */
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+/* Asegurarse que en dispositivos móviles se vea bien */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
