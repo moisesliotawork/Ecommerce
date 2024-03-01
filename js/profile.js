@@ -1,4 +1,5 @@
 function signOut() {
+  eliminarCart();
   // Aquí iría la lógica para cerrar la sesión del usuario
   alert("Has cerrado la sesión.");
   // Redirigir al usuario a la página de inicio o de inicio de sesión
@@ -23,3 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("No hay información de usuario disponible.");
   }
 });
+
+function eliminarCart() {
+  localStorage.removeItem("cart");
+}

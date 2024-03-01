@@ -61,3 +61,7 @@ function cartToString(cart) {
   }`;
   return cartSummary;
 }
+
+function eliminarCart() {
+  localStorage.removeItem("cart");
+}
