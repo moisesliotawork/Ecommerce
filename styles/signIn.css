@@ -1,0 +1,200 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.registration-box {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: auto;
+}
+
+.registration-box h2 {
+  text-align: center; /* Centra el título "Register" */
+  margin-bottom: 24px; /* Añade más espacio debajo del título */
+  color: #000;
+}
+
+.registration-box label,
+.registration-box p,
+.registration-box a {
+  color: #000; /* Text color to black for consistency */
+  display: block; /* Hace que los labels tomen su propio renglón */
+  margin-bottom: 8px; /* Añade más espacio debajo de cada label */
+}
+
+.registration-box form {
+  display: grid;
+  gap: 12px; /* Aumenta la separación entre elementos del formulario */
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+.registration-box button {
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+  color: #000; /* Color del texto a negro para visibilidad */
+  padding: 12px; /* Ajuste del relleno para dimensiones internas */
+  border-radius: 4px;
+  font-size: 14px; /* Tamaño de la letra reducido */
+}
+
+.registration-box button {
+  background-color: #ffffff; /* Botón con fondo blanco para un aspecto minimalista */
+  color: #000; /* Color del texto a negro */
+  border: 2px solid #000; /* Borde negro para el botón */
+  font-weight: bold; /* Hace el texto del botón más grueso */
+  cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+}
+
+.registration-box button:hover {
+  background-color: #e6e6e6; /* Cambio de color al pasar el ratón para efecto interactivo */
+}
+
+.registration-box a:hover {
+  text-decoration: underline;
+}
+
+.registration-box p {
+  text-align: center; /* Centra el texto en la caja */
+  margin-top: 24px; /* Espacio antes del párrafo */
+}
+
+#pass {
+  text-align: left; /* Centra el texto en la caja */
+  margin: 0px; /* Espacio antes del párrafo */
+}
+
+/* Hace que solo 'Login here' sea clickeable como un link */
+.registration-box p a {
+  color: #0000ee; /* Color estándar de los enlaces */
+  display: inline; /* Hace que el enlace no tome su propio renglón */
+}
+
+/* 2. Cambio de color del borde de los inputs al enfocar */
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border-color: #007bff; /* Cambia el color del borde a azul al enfocar */
+}
+
+/* 3. Estilos para el botón */
+.registration-box button {
+  background-color: #00c5e4; /* Fondo del botón azul claro */
+  color: #ffffff; /* Texto del botón blanco */
+  border: none; /* Remueve el borde */
+}
+
+/* Cambio de color al pasar el ratón para efecto interactivo */
+.registration-box button:hover {
+  background-color: #0099a9; /* Oscurece el botón al pasar el ratón por encima */
+}
+
+/* Estilos actualizados del Pop-Up */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  width: 60%; /* Ancho del pop-up */
+  max-width: 500px; /* Máximo ancho para asegurar que no sea demasiado grande en pantallas grandes */
+  height: 30%; /* Alto del pop-up */
+  min-height: 200px; /* Mínimo alto para asegurar que el contenido siempre quepa */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que el botón no esté pegado al mensaje */
+}
+
+.popup-content p {
+  font-size: 1.5rem;
+  margin-bottom: auto; /* Centra el texto verticalmente si hay espacio extra */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.popup-content h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: auto; /* Centra el texto verticalmente si hay espacio extra */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.popup-content button {
+  background-color: #00c5e4; /* Fondo del botón azul claro */
+  color: #ffffff; /* Texto del botón blanco */
+  border: none;
+  width: 30%; /* Ajusta el ancho del botón al contenido */
+  height: 17%;
+  padding: 10px 20px;
+  margin: 0 auto; /* Centra el botón horizontalmente */
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.popup-content button:hover {
+  background-color: #0099a9; /* Oscurece el botón al pasar el ratón por encima */
+}
+
+/* Pantallas pequeñas (menos de 600px) */
+@media only screen and (max-width: 600px) {
+  .registration-box {
+    width: 90%; /* Hace la caja más ancha para usar más espacio disponible */
+    margin: 20px; /* Aumenta el margen */
+    padding: 15px; /* Ajusta el padding */
+  }
+
+  .background {
+    padding: 15px; /* Reduce el padding general para pantallas pequeñas */
+  }
+}
+
+/* Pantallas medianas (menos de 768px) */
+@media only screen and (max-width: 768px) {
+  .registration-box {
+    width: 85%; /* Ajusta el ancho para tablets */
+  }
+}
+
+/* Pantallas grandes y más (mayores a 768px) */
+@media only screen and (min-width: 768px) {
+  .registration-box {
+    width: 400px; /* Mantiene un ancho fijo para pantallas grandes */
+  }
+}

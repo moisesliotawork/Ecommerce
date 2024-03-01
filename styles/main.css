@@ -1,0 +1,111 @@
+/* Estilos Base */
+body,
+h1,
+h2,
+h3,
+p,
+figure,
+figcaption,
+a,
+nav,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container-fluid {
+  background-color: #0c0c7a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-links,
+.footer-nav {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a,
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover,
+.footer-nav a:hover {
+  color: #a20717;
+}
+
+.nav-contact a[role="button"] {
+  background-color: #a20717;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.nav-contact a[role="button"]:hover {
+  background-color: #610000;
+}
+
+/* Contenido Principal */
+.main-heading {
+  background-image: url("../image/6074571.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 6rem 1rem; /* Ajustado para agregar padding horizontal */
+  text-align: center;
+}
+
+.main-heading h1 {
+  font-size: 3rem;
+  color: #f0f0f0;
+}
+
+.main-heading p {
+  color: #f0f0f0;
+}
+
+/* Sección de Contenido */
+.content {
+  padding: 1rem;
+}
+
+.content article {
+  padding-top: 20px;
+}
+
+.content h2 {
+  color: #333;
+  margin-top: 1rem;
+}
+
+.content p {
+  color: #666;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-nav {
+  justify-content: center;
+}

@@ -1,0 +1,345 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+}
+
+.navbar {
+  background-color: #fefefe;
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  padding: 0 20px;
+}
+
+.navbar ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: none;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  width: 200px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.btn-add-to-cart {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #4cae4c;
+}
+
+/* Estilos para ventana emergente */
+.modal {
+  display: none; /* Ventana oculta por defecto */
+  position: fixed;
+  z-index: 2; /* Asegúrate de que sea superior al resto del contenido */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Si el contenido es más largo que la pantalla */
+  background-color: rgb(0, 0, 0); /* Fondo con opacidad */
+  background-color: rgba(0, 0, 0, 0.4); /* Negro con opacidad */
+}
+
+/* Estilo del contenido de la ventana */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% desde arriba y centrado */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Podrías querer un ancho menor o mayor */
+  border-radius: 4px;
+  gap: 15px;
+}
+
+/* El botón para cerrar la ventana */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para la imagen dentro del modal */
+#modalImage {
+  max-width: 30%; /* Limita el ancho máximo de la imagen para evitar que ocupe toda la pantalla */
+  max-height: 200px; /* Puedes ajustar esto según tus necesidades */
+  display: block; /* Asegura que la imagen tenga su propia línea */
+  margin: 20px auto; /* Centra la imagen horizontalmente y añade un poco de margen vertical */
+}
+
+.quantity-controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.quantity-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.quantity-input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+/* Deshabilitar la apariencia de botón para los input de tipo número */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Estilos para móviles primero (Mobile First) */
+.navbar ul {
+  flex-direction: column;
+  padding: 0;
+}
+
+.navbar ul li {
+  padding: 10px; /* Más espacio en cada elemento para facilitar el toque en pantallas táctiles */
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+  }
+  .navbar ul li {
+    padding: 0 20px;
+  }
+}
+
+/* Ajustes para el contenedor de productos */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Ajustes para las tarjetas de productos */
+.product-card {
+  width: 100%; /* Ocupa el 100% del ancho en dispositivos móviles */
+  margin: 10px;
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 600px) {
+  .product-card {
+    width: calc(
+      50% - 20px
+    ); /* Ajuste para 2 columnas con espacio de separación */
+  }
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 1024px) {
+  .product-card {
+    width: calc(
+      25% - 20px
+    ); /* Ajuste para 4 columnas con espacio de separación */
+  }
+}
+
+/* Estilos para la ventana modal en dispositivos móviles */
+.modal-content {
+  width: 90%; /* Ancho más pequeño en dispositivos móviles */
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 30%; /* Ancho más grande en pantallas de escritorio */
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: none;
+  width: 80%; /* Ancho más apropiado para todos los dispositivos */
+  max-width: 400px; /* Máximo ancho que la ventana modal puede tener */
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para un toque de profundidad */
+  text-align: center; /* Centra el texto para una presentación más limpia */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalImage {
+  width: 100%; /* Imagen debe ocupar el ancho completo para consistencia */
+  height: auto;
+  margin-bottom: 20px; /* Espacio antes del título */
+}
+
+/* Estilo simplificado para el título y la descripción */
+#modalTitle,
+#modalDescription {
+  margin-bottom: 20px; /* Espacio uniforme después de cada elemento */
+}
+
+.quantity-controller {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px 0; /* Espacio antes y después del controlador de cantidad */
+  justify-content: center;
+}
+
+.quantity-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #333;
+  margin: 0; /* Remover márgenes adicionales */
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc; /* Añadir borde para definir el campo de entrada */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 5px;
+  margin: 0 10px;
+}
+
+/* Botón de confirmación estilizado para que coincida con el estilo minimalista */
+button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto; /* Auto para el ancho para que no ocupe todo el ancho */
+  display: inline-block; /* Para que el botón no ocupe todo el ancho de la línea */
+  margin-top: 20px; /* Espacio antes del botón */
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+/* Asegurarse que en dispositivos móviles se vea bien */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
